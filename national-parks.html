@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enjoy The Outdoors</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="images-custom/logo02.svg" alt="Enjoy The Outdoors" />
+      </div>
+      <nav class="navBar" id="navBar">
+        <ul class="navLinks">
+          <li><a href="index.html" class="navLink">Home</a></li>
+          <li><a href="mountains.html" class="navLink">Mountains</a></li>
+          <li><a href="national-parks.html" class="navLink">Parks</a></li>
+          <li>
+            <i
+              class="fas fa-search searchIcon searchContainer"
+              id="searchIcon"
+            ></i>
+            <input
+              type="text"
+              class="searchInput"
+              id="searchInput"
+              placeholder="Search..."
+            />
+          </li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" src="audio/audio02.mp3" loop></audio>
+
+    <main>
+      <div class="heroSectionParks">
+        <div class="videoContainerWrapperParks">
+          <div class="videoContainerParks" id="videoContainerParks">
+            <video
+              src="images-custom/video001.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+            <video src="images-custom/video004.mp4" muted playsinline></video>
+            <video src="images-custom/video005.mp4" muted playsinline></video>
+            <video src="images-custom/video008.mp4" muted playsinline></video>
+            <video src="images-custom/video009.mp4" muted playsinline></video>
+          </div>
+        </div>
+        <div class="overlayParks">
+          <h1 class="heroTitleParks">Nature's Timeless Beauty</h1>
+          <p class="heroSubtitleParks">
+            Experience the Beauty of Parks, Historical Sites, and Islands Across
+            the Country.
+          </p>
+          <div class="searchBarParks">
+            <button class="filterButtonParks" id="filterButtonParks">
+              <i class="fas fa-filter"></i> Filter
+            </button>
+            <select
+              class="dropdownParks filterDropdownParks"
+              id="locationParks"
+              style="display: none"
+            >
+              <option value="" disabled selected>Select Location</option>
+            </select>
+            <select
+              class="dropdownParks filterDropdownParks"
+              id="typeParks"
+              style="display: none"
+            >
+              <option value="" disabled selected>Select Type</option>
+            </select>
+            <input
+              type="text"
+              class="searchInputParks"
+              id="searchBarParks"
+              placeholder="Search..."
+            />
+            <button class="searchButtonParks btn" id="searchButtonParks">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="dotsContainerParks">
+            <span class="dotParks" data-video="0"></span>
+            <span class="dotParks" data-video="1"></span>
+            <span class="dotParks" data-video="2"></span>
+            <span class="dotParks" data-video="3"></span>
+            <span class="dotParks" data-video="4"></span>
+          </div>
+        </div>
+      </div>
+      <div class="resultsSection">
+        <div id="resultsTitle" class="resultsTitle"></div>
+        <div id="clearResultsContainer" class="clearResultsContainer">
+          <button id="viewAllButton" class="viewAllButton">View All ></button>
+          <button id="clearResultsButton" class="clearResultsButton">
+            <i class="fas fa-times"></i> Clear Results
+          </button>
+        </div>
+        <div id="resultsContainer" class="resultsContainer">
+          <!-- Search results will be appended here -->
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="socialIcons">
+        <a href="#" class="socialIcon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="socialIcon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="socialIcon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="socialIcon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p class="footerText">
+        © 2023 Our Company. All rights reserved. All trademarks are the
+        property of our respective owners.
+      </p>
+      <div class="logo">
+        <img src="images-custom/logo02.svg" alt="Your Company Logo" />
+      </div>
+    </footer>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/national-park.js"></script>
+  </body>
+</html>
