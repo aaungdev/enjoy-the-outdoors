@@ -170,9 +170,7 @@ body {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  transition:
-    background-color 0.3s ease-in-out,
-    color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn::after {
@@ -652,9 +650,7 @@ body {
 .btn.searchMountain:hover {
   background-color: #1a1a1a;
   color: #00ff00;
-  transition:
-    background-color 0.3s ease-in-out,
-    color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -1084,7 +1080,7 @@ body {
 /* Base Styles */
 .heroSectionMountain {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1134,10 +1130,10 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 30px;
   padding: 0.5em;
-  width: 90%; 
-  max-width: 800px; 
+  width: 90%;
+  max-width: 800px;
   margin-bottom: 2em;
-  margin-left: 14em;
+  margin-left: 23em;
 }
 
 .filterButtonMountain {
@@ -1195,14 +1191,20 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 6em; 
+  margin-top: 6em;
 }
 
 .gifMount {
-  width: 250px; 
-  height: 250px; 
-  margin: 0 2em; 
+  width: 250px;
+  height: 250px;
+  margin: 0 2em;
   border-radius: 10px;
+}
+.gifMount1 {
+  width: 250px;
+  height: 250px;
+  margin-right: 80em;
+  margin-bottom: -16em;
 }
 
 /* Responsive Styles */
@@ -1321,4 +1323,65 @@ body {
   .gifContainer {
     display: none;
   }
+}
+.resultsContainerMount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.resultsTitleMount {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.clearResultsButtonMount, .viewAllButtonMount {
+  background-color: #d7f0d7;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.clearResultsButtonMount:hover, .viewAllButtonMount:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.mountainCard {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.mountainCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mountainCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.mountainCard h3 {
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+
+.mountainCard p {
+  font-size: 1em;
+  margin: 0.5em;
 }
