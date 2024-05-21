@@ -1207,123 +1207,6 @@ body {
   margin-bottom: -16em;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-  .heroTitleMountain {
-    font-size: 2.5em;
-  }
-
-  .heroSubtitleMountain {
-    font-size: 1.1em;
-    margin-bottom: 1.5em;
-  }
-
-  .searchBarMountain {
-    width: 90%;
-    margin-left: 10em;
-  }
-
-  .gifMount {
-    width: 200px;
-    height: 200px;
-    margin: 0 1.5em;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .heroTitleMountain {
-    font-size: 2.2em;
-  }
-
-  .heroSubtitleMountain {
-    font-size: 1em;
-    margin-bottom: 1.5em;
-  }
-
-  .searchBarMountain {
-    width: 80%;
-    margin-left: 6em;
-  }
-
-  .gifMount {
-    width: 175px;
-    height: 175px;
-    margin: 0 1.2em;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .heroTitleMountain {
-    font-size: 2em;
-  }
-
-  .heroSubtitleMountain {
-    font-size: 0.9em;
-    margin-bottom: 1.2em;
-  }
-
-  .searchBarMountain {
-    width: 75%;
-    margin-left: 4em;
-  }
-
-  .gifMount {
-    width: 150px;
-    height: 150px;
-    margin: 0 1em;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .heroTitleMountain {
-    font-size: 1.8em;
-  }
-
-  .heroSubtitleMountain {
-    font-size: 0.8em;
-    margin-bottom: 1em;
-  }
-
-  .searchBarMountain {
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin-left: 0;
-    padding: 1em;
-  }
-
-  .filterButtonMountain,
-  .dropdownMountain,
-  .searchInputMountain,
-  .searchButtonMountain {
-    width: 100%;
-    margin: 0.5em 0;
-  }
-
-  .gifContainer {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .heroTitleMountain {
-    font-size: 1.5em;
-  }
-
-  .heroSubtitleMountain {
-    font-size: 0.7em;
-    margin-bottom: 0.8em;
-  }
-
-  .searchBarMountain {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .gifContainer {
-    display: none;
-  }
-}
 .resultsContainerMount {
   display: flex;
   flex-direction: column;
@@ -1359,10 +1242,11 @@ body {
   color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  width: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
 }
 
 .mountainCard:hover {
@@ -1371,17 +1255,22 @@ body {
 }
 
 .mountainCard img {
-  width: 100%;
+  width: 200px;
   height: 200px;
   object-fit: cover;
 }
 
-.mountainCard h3 {
-  font-size: 1.5em;
-  margin: 0.5em;
+.mountainCardContent {
+  padding: 1em;
+  flex: 1;
 }
 
-.mountainCard p {
+.mountainCardContent h3 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.mountainCardContent p {
   font-size: 1em;
-  margin: 0.5em;
+  margin: 0.5em 0;
 }

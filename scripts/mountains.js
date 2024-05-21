@@ -28,22 +28,10 @@ window.onload = function () {
   // Mountain search functionality
   const filterButton = document.getElementById('filterButtonMount');
   const nameDropdown = document.getElementById('locationMount');
-  const elevationDropdown = document.getElementById('typeMount');
   const searchButton = document.getElementById('searchButtonMount');
   const resultsContainer = document.getElementById('resultsContainerMount');
-  const resultsTitle = document.createElement('div');
-  resultsTitle.className = 'resultsTitleMount';
-  resultsContainer.appendChild(resultsTitle);
-
-  const clearResultsButton = document.createElement('button');
-  clearResultsButton.className = 'clearResultsButtonMount';
-  clearResultsButton.textContent = 'Clear Results';
-  resultsTitle.appendChild(clearResultsButton);
-
-  const viewAllButton = document.createElement('button');
-  viewAllButton.className = 'viewAllButtonMount';
-  viewAllButton.textContent = 'View All';
-  resultsTitle.appendChild(viewAllButton);
+  const clearResultsButton = document.querySelector('.clearResultsButtonMount');
+  const viewAllButton = document.querySelector('.viewAllButtonMount');
 
   // Initially hide dropdowns
   const filterDropdowns = document.querySelectorAll('.filterDropdownMountain');
@@ -63,31 +51,32 @@ window.onload = function () {
       optionName.value = mountain.name;
       optionName.textContent = mountain.name;
       nameDropdown.appendChild(optionName);
-
-      const optionElevation = document.createElement('option');
-      optionElevation.value = mountain.elevation;
-      optionElevation.textContent = `${mountain.elevation} ft`;
-      elevationDropdown.appendChild(optionElevation);
   });
 
   // Search functionality
   searchButton.onclick = function () {
       const selectedName = nameDropdown.value;
-      const selectedElevation = elevationDropdown.value;
       const searchTerm = document.getElementById('searchBarInputMount').value.toLowerCase();
 
       const filteredMountains = mountainsArray.filter(mountain => {
           const matchesName = selectedName ? mountain.name === selectedName : true;
-          const matchesElevation = selectedElevation ? mountain.elevation.toString() === selectedElevation : true;
           const matchesSearchTerm = mountain.name.toLowerCase().includes(searchTerm) ||
               mountain.desc.toLowerCase().includes(searchTerm);
-          return matchesName && matchesElevation && matchesSearchTerm;
+          return matchesName && matchesSearchTerm;
       });
 
       displayResults(filteredMountains);
   };
 
-  function displayResults(mountains) {
+  async function getSunsetForMountain(lat, lng) {
+      let response = await fetch(
+          `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`
+      );
+      let data = await response.json();
+      return data;
+  }
+
+  async function displayResults(mountains) {
       resultsContainer.innerHTML = ''; // Clear previous results
 
       if (mountains.length === 0) {
@@ -95,19 +84,16 @@ window.onload = function () {
           return;
       }
 
-      const header = document.createElement('div');
-      header.classList.add('resultHeaderMount');
-      header.innerHTML = `<div>${mountains.length} Mountains Found</div>`;
-      resultsContainer.appendChild(header);
-      resultsContainer.appendChild(resultsTitle); // Append the results title (clear and view all buttons)
-
-      mountains.forEach(mountain => {
+      mountains.forEach(async mountain => {
           const card = document.createElement('div');
           card.classList.add('mountainCard');
 
           const img = document.createElement('img');
-          img.src = `images-custom/${mountain.img}`;
+          img.src = `images/${mountain.img}`;
           img.alt = mountain.name;
+
+          const content = document.createElement('div');
+          content.classList.add('mountainCardContent');
 
           const name = document.createElement('h3');
           name.textContent = mountain.name;
@@ -118,10 +104,17 @@ window.onload = function () {
           const elevation = document.createElement('p');
           elevation.textContent = `Elevation: ${mountain.elevation} ft`;
 
+          const sunsetInfo = document.createElement('p');
+          const sunsetData = await getSunsetForMountain(mountain.coords.lat, mountain.coords.lng);
+          sunsetInfo.textContent = `Sunset: ${sunsetData.results.sunset} UTC`;
+
+          content.appendChild(name);
+          content.appendChild(desc);
+          content.appendChild(elevation);
+          content.appendChild(sunsetInfo);
+
           card.appendChild(img);
-          card.appendChild(name);
-          card.appendChild(desc);
-          card.appendChild(elevation);
+          card.appendChild(content);
 
           resultsContainer.appendChild(card);
       });
@@ -130,11 +123,10 @@ window.onload = function () {
   clearResultsButton.onclick = function () {
       resultsContainer.innerHTML = ''; // Clear results
       nameDropdown.value = '';
-      elevationDropdown.value = '';
       searchInput.value = '';
   };
 
   viewAllButton.onclick = function () {
-      displayResults(mountainsArray); // Display all mountains
+      displayResults(mountainsArray);
   };
 };
