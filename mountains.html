@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enjoy The Outdoors - Mountains</title>
@@ -9,79 +9,128 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">
-            <img src="images-custom/logo02.svg" alt="Enjoy The Outdoors" />
+      <div class="logo">
+        <img src="images-custom/logo02.svg" alt="Enjoy The Outdoors" />
+      </div>
+      <nav class="navBar" id="navBarMount">
+        <ul class="navLinks">
+          <li><a href="index.html" class="navLink">Home</a></li>
+          <li><a href="mountains.html" class="navLink">Mountains</a></li>
+          <li><a href="national-parks.html" class="navLink">Parks</a></li>
+          <li>
+            <i
+              class="fas fa-search searchIcon searchContainer"
+              id="searchIconMount"
+            ></i>
+            <input
+              type="text"
+              class="searchInput"
+              id="searchInputMount"
+              placeholder="Search..."
+            />
+          </li>
+        </ul>
+        <div class="hamburger" id="hamburgerMount">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-        <nav class="navBar" id="navBarMount">
-            <ul class="navLinks">
-                <li><a href="index.html" class="navLink">Home</a></li>
-                <li><a href="mountains.html" class="navLink">Mountains</a></li>
-                <li><a href="national-parks.html" class="navLink">Parks</a></li>
-                <li>
-                    <i class="fas fa-search searchIcon searchContainer" id="searchIconMount"></i>
-                    <input type="text" class="searchInput" id="searchInputMount" placeholder="Search..." />
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburgerMount">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+      </nav>
     </header>
 
     <main>
-        <div class="heroSectionMountain" id="heroSectionMount">
-            <img src="images-custom/mountain002.png" alt="Mountain Background" class="backgroundImage" />
-            <div class="overlayMountain" id="overlayMount">
-                <div class="mainContent">
-                    <h1 class="heroTitleMountain" id="heroTitleMount">Discover the Majestic Mountains</h1>
-                    <p class="heroSubtitleMountain" id="heroSubtitleMount">Explore the grandeur of mountains and encounter wildlife in their natural habitats.</p>
-                    <div class="searchBarMountain" id="searchBarMount">
-                        <button class="filterButtonMountain" id="filterButtonMount">
-                            <i class="fas fa-filter"></i> Filter
-                        </button>
-                        <select class="dropdownMountain filterDropdownMountain" id="locationMount" style="display: none;">
-                            <option value="" disabled selected>Select Mountain</option>
-                        </select>
-                        <input type="text" class="searchInputMountain" id="searchBarInputMount" placeholder="Search..." />
-                        <button class="searchButtonMountain btn" id="searchButtonMount">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <img src="images-custom/bald-eagle.png" alt="GIF 3" class="gifMount1" />
-                    <div class="gifContainer" id="gifContainerMount">
-                        <img src="images-custom/mountain005.gif" alt="GIF 1" class="gifMount" />
-                        <img src="images-custom/mountain009.gif" alt="GIF 3" class="gifMount" />
-                        <img src="images-custom/mountain009.gif" alt="GIF 3" class="gifMount" />
-                        <img src="images-custom/mountain008.gif" alt="GIF 3" class="gifMount" />
-                    </div>
-                </div>
+      <div class="heroSectionMountain" id="heroSectionMount">
+        <img
+          src="images-custom/mountain002.png"
+          alt="Mountain Background"
+          class="backgroundImage"
+        />
+        <div class="overlayMountain" id="overlayMount">
+          <div class="mainContent">
+            <h1 class="heroTitleMountain" id="heroTitleMount">
+              Discover the Majestic Mountains
+            </h1>
+            <p class="heroSubtitleMountain" id="heroSubtitleMount">
+              Explore the grandeur of mountains and encounter wildlife in their
+              natural habitats.
+            </p>
+            <div class="searchBarMountain" id="searchBarMount">
+              <button class="filterButtonMountain" id="filterButtonMount">
+                <i class="fas fa-filter"></i> Filter
+              </button>
+              <select
+                class="dropdownMountain filterDropdownMountain"
+                id="locationMount"
+                style="display: none"
+              >
+                <option value="" disabled selected>Select Mountain</option>
+              </select>
+              <input
+                type="text"
+                class="searchInputMountain"
+                id="searchBarInputMount"
+                placeholder="Search..."
+              />
+              <button class="searchButtonMountain btn" id="searchButtonMount">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
+            <img
+              src="images-custom/bald-eagle.png"
+              alt="GIF 3"
+              class="gifMount1"
+            />
+            <div class="gifContainer" id="gifContainerMount">
+              <img
+                src="images-custom/mountain005.gif"
+                alt="GIF 1"
+                class="gifMount"
+              />
+              <img
+                src="images-custom/mountain009.gif"
+                alt="GIF 3"
+                class="gifMount"
+              />
+              <img
+                src="images-custom/mountain009.gif"
+                alt="GIF 3"
+                class="gifMount"
+              />
+              <img
+                src="images-custom/mountain008.gif"
+                alt="GIF 3"
+                class="gifMount"
+              />
+            </div>
+          </div>
         </div>
-        <div class="resultsTitleMount">
-            <button class="viewAllButtonMount">View All ></button>
-            <button class="clearResultsButtonMount">✖ Clear Results</button>
-        </div>
-        <div class="resultsContainerMount" id="resultsContainerMount"></div>
+      </div>
+      <div class="resultsTitleMount">
+        <button class="viewAllButtonMount">View All ></button>
+        <button class="clearResultsButtonMount">✖ Clear Results</button>
+      </div>
+      <div class="resultsContainerMount" id="resultsContainerMount"></div>
     </main>
 
     <footer class="footer">
-        <div class="socialIcons">
-            <a href="#" class="socialIcon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="socialIcon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="socialIcon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="socialIcon"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="footerText">© 2023 Our Company. All rights reserved. All trademarks are the property of our respective owners.</p>
-        <div class="logo">
-            <img src="images-custom/logo02.svg" alt="Your Company Logo" />
-        </div>
+      <div class="socialIcons">
+        <a href="#" class="socialIcon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="socialIcon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="socialIcon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="socialIcon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p class="footerText">
+        © 2023 Our Company. All rights reserved. All trademarks are the property
+        of our respective owners.
+      </p>
+      <div class="logo">
+        <img src="images-custom/logo02.svg" alt="Your Company Logo" />
+      </div>
     </footer>
     <script src="scripts/mountainData.js"></script>
     <script src="scripts/mountains.js"></script>
-</body>
+  </body>
 </html>

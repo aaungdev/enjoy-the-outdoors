@@ -1077,7 +1077,7 @@ body {
 }
 
 /* Mountain Hero Page */
-/* Base Styles */
+/* Hero Section */
 .heroSectionMountain {
   position: relative;
   height: 90vh;
@@ -1086,6 +1086,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: #000000;
 }
 
 .backgroundImage {
@@ -1200,6 +1201,7 @@ body {
   margin: 0 2em;
   border-radius: 10px;
 }
+
 .gifMount1 {
   width: 250px;
   height: 250px;
@@ -1207,19 +1209,12 @@ body {
   margin-bottom: -16em;
 }
 
-.resultsContainerMount {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-  margin-top: 2em;
-}
-
+/* Results Section */
 .resultsTitleMount {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: 1em;
+  width: 90%;
+  margin: 2em auto 1em auto;
 }
 
 .clearResultsButtonMount, .viewAllButtonMount {
@@ -1237,16 +1232,26 @@ body {
   color: #000000;
 }
 
+.resultsContainerMount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+
 .mountainCard {
   background-color: #1a1a1a;
   color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  width: 100%;
+  width: calc(50% - 1em);
   display: flex;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
+  padding: 1em;
+  margin: 0.5em;
 }
 
 .mountainCard:hover {
@@ -1255,13 +1260,13 @@ body {
 }
 
 .mountainCard img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
+  margin-right: 1em;
 }
 
 .mountainCardContent {
-  padding: 1em;
   flex: 1;
 }
 
