@@ -82,10 +82,9 @@ function setupMountainSearch() {
     };
 
     clearResultsButton.onclick = function () {
-        resultsContainer.innerHTML = ''; // Clear results
+        resultsContainer.innerHTML = '<p>No mountains to display. Use the search functionality to find mountains.</p>'; // Clear results
         nameDropdown.value = '';
         searchInput.value = '';
-        resultsContainer.innerHTML = '<p>No mountains to display. Use the search functionality to find mountains.</p>';
     };
 
     // Display no mountains initially
