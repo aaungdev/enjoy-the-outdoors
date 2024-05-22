@@ -1,8 +1,8 @@
 'use strict';
 
 window.onload = function () {
-    const audioElement = document.getElementById('backgroundMusic');
-    const heroSection = document.getElementById('heroSection');
+    const audioElement = document.querySelector('#backgroundMusic');
+    const heroSection = document.querySelector('#heroSection');
 
     // Function to play audio
     function playAudio() {
@@ -36,8 +36,8 @@ window.onload = function () {
         observer.observe(heroSection);
     }
     // Hamburger menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navBar').getElementsByClassName('navLinks')[0];
+    const hamburger = document.querySelector('#hamburger');
+    const navLinks = document.querySelector('#navBar').getElementsByClassName('navLinks')[0];
 
     hamburger.onclick = function () {
         hamburger.classList.toggle('active');
@@ -45,16 +45,16 @@ window.onload = function () {
     };
 
     // Filter functionality
-    const filterButton = document.getElementById('filterButtonParks');
+    const filterButton = document.querySelector('#filterButtonParks');
     const filterDropdowns = document.querySelectorAll('.filterDropdownParks');
-    const searchButton = document.getElementById('searchButtonParks');
-    const clearButton = document.getElementById('clearResultsButton');
-    const viewAllButton = document.getElementById('viewAllButton');
-    const resultsTitle = document.getElementById('resultsTitle');
-    const resultsContainer = document.getElementById('resultsContainer');
-    const locationParks = document.getElementById('locationParks');
-    const typeParks = document.getElementById('typeParks');
-    const searchBarParks = document.getElementById('searchBarParks');
+    const searchButton = document.querySelector('#searchButtonParks');
+    const clearButton = document.querySelector('#clearResultsButton');
+    const viewAllButton = document.querySelector('#viewAllButton');
+    const resultsTitle = document.querySelector('#resultsTitle');
+    const resultsContainer = document.querySelector('#resultsContainer');
+    const locationParks = document.querySelector('#locationParks');
+    const typeParks = document.querySelector('#typeParks');
+    const searchBarParks = document.querySelector('#searchBarParks');
 
     // Initially hide dropdowns
     filterDropdowns.forEach(dropdown => {
@@ -63,7 +63,7 @@ window.onload = function () {
 
     filterButton.onclick = function () {
         filterDropdowns.forEach(dropdown => {
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+            dropdown.style.display = dropdown.style.display == 'none' ? 'block' : 'none';
         });
     };
 
@@ -89,7 +89,7 @@ window.onload = function () {
         const searchTerm = searchBarParks.value.toLowerCase();
 
         const filteredParks = nationalParksArray.filter(park => {
-            const matchesLocation = selectedLocation ? park.State === selectedLocation : true;
+            const matchesLocation = selectedLocation ? park.State == selectedLocation : true;
             const matchesType = selectedType ? park.LocationName.toLowerCase().includes(selectedType.toLowerCase()) : true;
             const matchesSearchTerm = park.LocationName.toLowerCase().includes(searchTerm) ||
                 park.City.toLowerCase().includes(searchTerm);
@@ -215,8 +215,8 @@ window.onload = function () {
     showVideo(currentIndex);
 
     // Search bar functionality
-    const searchIcon = document.getElementById("searchIcon");
-    const searchInput = document.getElementById("searchInput");
+    const searchIcon = document.querySelector("#searchIcon");
+    const searchInput = document.querySelector("#searchInput");
 
     searchIcon.onclick = function () {
         searchInput.classList.toggle("visible");
