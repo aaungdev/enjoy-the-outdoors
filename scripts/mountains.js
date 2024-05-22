@@ -8,9 +8,9 @@ window.onload = function () {
 };
 
 function setupHamburgerMenu() {
-  const hamburger = document.getElementById("hamburgerMount");
+  const hamburger = document.querySelector("#hamburgerMount");
   const navLinks = document
-    .getElementById("navBarMount")
+    .querySelector("#navBarMount")
     .getElementsByClassName("navLinks")[0];
 
   hamburger.onclick = function () {
@@ -20,8 +20,8 @@ function setupHamburgerMenu() {
 }
 
 function setupSearchBar() {
-  const searchIcon = document.getElementById("searchIconMount");
-  const searchInput = document.getElementById("searchInputMount");
+  const searchIcon = document.querySelector("#searchIconMount");
+  const searchInput = document.querySelector("#searchInputMount");
 
   searchIcon.onclick = function () {
     searchInput.classList.toggle("visible");
@@ -41,14 +41,14 @@ function setupSearchBar() {
 }
 
 function setupMountainSearch() {
-  const filterButton = document.getElementById("filterButtonMount");
+  const filterButton = document.querySelector("#filterButtonMount");
   const filterDropdowns = document.querySelectorAll(".filterDropdownMountain");
-  const searchButton = document.getElementById("searchButtonMount");
+  const searchButton = document.querySelector("#searchButtonMount");
   const viewAllButton = document.querySelector(".viewAllButtonMount");
   const clearResultsButton = document.querySelector(".clearResultsButtonMount");
-  const nameDropdown = document.getElementById("locationMount");
-  const resultsContainer = document.getElementById("resultsContainerMount");
-  const searchInput = document.getElementById("searchBarInputMount");
+  const nameDropdown = document.querySelector("#locationMount");
+  const resultsContainer = document.querySelector("#resultsContainerMount");
+  const searchInput = document.querySelector("#searchBarInputMount");
 
   // Initially hide dropdowns
   filterDropdowns.forEach((dropdown) => {
@@ -111,7 +111,7 @@ async function getSunsetForMountain(lat, lng) {
 }
 
 async function displayResults(mountains) {
-  const resultsContainer = document.getElementById("resultsContainerMount");
+  const resultsContainer = document.querySelector("#resultsContainerMount");
   resultsContainer.innerHTML = "";
 
   if (mountains.length == 0) {
@@ -163,7 +163,7 @@ async function displayResults(mountains) {
 }
 
 function setupBackgroundMusic() {
-  const audioElement = document.getElementById("backgroundMusic");
+  const audioElement = document.querySelector("#backgroundMusic");
 
   // Function to play audio
   function playAudio() {

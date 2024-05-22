@@ -755,7 +755,7 @@ body {
 /* Parks Main Section */
 .heroSectionParks {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   background-color: #1a1a1a;
 }
