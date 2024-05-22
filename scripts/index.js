@@ -1,7 +1,6 @@
 "use strict";
 
 window.onload = function () {
-    
   // Hamburger menu toggle
   const hamburger = document.querySelector("#hamburger");
   const navLinks = document.querySelector("#navBar .navLinks");
@@ -23,8 +22,10 @@ window.onload = function () {
     });
   }
 
-  videoContainer.onmouseover = () => videoContainer.style.animationPlayState = "paused";
-  videoContainer.onmouseout = () => videoContainer.style.animationPlayState = "running";
+  videoContainer.onmouseover = () =>
+    (videoContainer.style.animationPlayState = "paused");
+  videoContainer.onmouseout = () =>
+    (videoContainer.style.animationPlayState = "running");
 
   // Search bar functionality
   const searchIcon = document.querySelector("#searchIcon");
@@ -38,7 +39,10 @@ window.onload = function () {
   };
 
   document.onclick = function (event) {
-    if (!searchIcon.contains(event.target) && !searchInput.contains(event.target)) {
+    if (
+      !searchIcon.contains(event.target) &&
+      !searchInput.contains(event.target)
+    ) {
       searchInput.classList.remove("visible");
     }
   };
@@ -65,16 +69,18 @@ window.onload = function () {
   const audioElement = document.querySelector("#backgroundMusic");
   const main = document.querySelector("main");
 
-  const observerAudio = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        audioElement.play();
-      } else {
-        audioElement.pause();
-      }
-    });
-  }, { threshold: 0.5 });
+  const observerAudio = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          audioElement.play();
+        } else {
+          audioElement.pause();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
   observerAudio.observe(main);
-  
 };

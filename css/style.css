@@ -206,20 +206,21 @@ body {
 }
 
 .imageContent img {
-  margin-right: 8em;
-  max-width: 100%;
+  margin-right: 1em;
+  max-width: 150%;
   border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
   .heroSection {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
   }
 
   .textContent {
-    max-width: 100%;
-    margin-bottom: 2em;
+    max-width: 50%;
+    margin: 0 0 2em 0;
+    font-size: 0.6em;
   }
 
   .imageContent img {
@@ -229,7 +230,7 @@ body {
 
   .navBar {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: end;
     width: 100%;
   }
 
@@ -405,14 +406,14 @@ body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  height: 300px; /* Increased height */
+  height: 300px;
 }
 
 .verticalCards .parkCard {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  height: 300px; /* Fixed height for uniformity */
+  height: 300px;
 }
 
 .horizontalCards .parkCard img,
@@ -665,7 +666,7 @@ body {
   }
 
   .sectionTitle {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .subtitle {
@@ -718,6 +719,11 @@ body {
 
 @media (max-width: 768px) {
   .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer1 {
     flex-direction: column;
     text-align: center;
   }
@@ -1089,9 +1095,6 @@ body {
 
 /* Mountain Hero Page */
 /* Hero Section */
-/* .mountainPage {
-    background-color: #000000;
-} */
 .heroSectionMountain {
   position: relative;
   height: 90vh;
@@ -1297,4 +1300,63 @@ body {
 .mountainCardContent p {
   font-size: 1em;
   margin: 0.5em 0;
+}
+
+@media (max-width: 768px) {
+  .heroSectionMountain {
+    height: 50vh;
+    padding: 2em 1em;
+  }
+
+  .overlayMountain {
+    padding: 1em;
+    margin-top: 2em;
+  }
+
+  .heroTitleMountain {
+    font-size: 1em;
+    flex-wrap: wrap;
+  }
+
+  .heroSubtitleMountain {
+    font-size: 0.9em;
+  }
+
+  .searchBarMountain {
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+  }
+
+  .filterButtonMountain,
+  .dropdownMountain,
+  .searchInputMountain,
+  .searchButtonMountain {
+    width: 100%;
+    margin: 0.5em 0;
+  }
+
+  .gifContainer {
+    display: none;
+  }
+
+  .resultsTitleMount {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .resultsContainerMount {
+    flex-direction: column;
+  }
+
+  .mountainCard {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mountainCard img {
+    display: none;
+  }
 }
