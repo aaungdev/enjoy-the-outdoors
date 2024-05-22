@@ -58,7 +58,7 @@ function setupMountainSearch() {
   filterButton.onclick = function () {
     filterDropdowns.forEach((dropdown) => {
       dropdown.style.display =
-        dropdown.style.display === "none" ? "block" : "none";
+        dropdown.style.display == "none" ? "block" : "none";
     });
   };
 
@@ -114,7 +114,7 @@ async function displayResults(mountains) {
   const resultsContainer = document.getElementById("resultsContainerMount");
   resultsContainer.innerHTML = "";
 
-  if (mountains.length === 0) {
+  if (mountains.length == 0) {
     resultsContainer.innerHTML = "<p>No mountains found.</p>";
     return;
   }
