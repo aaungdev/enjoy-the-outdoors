@@ -5,13 +5,20 @@ window.onload = function () {
   setupSearchBar();
   setupMountainSearch();
   setupBackgroundMusic();
+
+  // Initialize search input with URL parameter and display results
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get('search');
+  if (searchQuery) {
+    const searchInput = document.querySelector("#searchInputMount");
+    searchInput.value = searchQuery;
+    filterMountains(searchQuery);
+  }
 };
 
 function setupHamburgerMenu() {
   const hamburger = document.querySelector("#hamburgerMount");
-  const navLinks = document
-    .querySelector("#navBarMount")
-    .getElementsByClassName("navLinks")[0];
+  const navLinks = document.querySelector("#navBarMount").getElementsByClassName("navLinks")[0];
 
   hamburger.onclick = function () {
     hamburger.classList.toggle("active");
@@ -30,11 +37,15 @@ function setupSearchBar() {
     }
   };
 
+  searchInput.onkeypress = function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSearch(searchInput.value);
+    }
+  };
+
   document.onclick = function (event) {
-    if (
-      !searchIcon.contains(event.target) &&
-      !searchInput.contains(event.target)
-    ) {
+    if (!searchIcon.contains(event.target) && !searchInput.contains(event.target)) {
       searchInput.classList.remove("visible");
     }
   };
@@ -57,8 +68,7 @@ function setupMountainSearch() {
 
   filterButton.onclick = function () {
     filterDropdowns.forEach((dropdown) => {
-      dropdown.style.display =
-        dropdown.style.display == "none" ? "block" : "none";
+      dropdown.style.display = dropdown.style.display == "none" ? "block" : "none";
     });
   };
 
@@ -91,21 +101,17 @@ function setupMountainSearch() {
   };
 
   clearResultsButton.onclick = function () {
-    resultsContainer.innerHTML =
-      "<p>No mountains to display. Use the search functionality to find mountains.</p>"; // Clear results
+    resultsContainer.innerHTML = "<p>No mountains to display. Use the search functionality to find mountains.</p>"; // Clear results
     nameDropdown.value = "";
     searchInput.value = "";
   };
 
   // Display no mountains initially
-  resultsContainer.innerHTML =
-    "<p>No mountains to display. Use the search functionality to find mountains.</p>";
+  resultsContainer.innerHTML = "<p>No mountains to display. Use the search functionality to find mountains.</p>";
 }
 
 async function getSunsetForMountain(lat, lng) {
-  const response = await fetch(
-    `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`
-  );
+  const response = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
   const data = await response.json();
   return data;
 }
@@ -143,10 +149,7 @@ async function displayResults(mountains) {
     effort.textContent = `Effort: ${mountain.effort}`;
 
     const sunsetInfo = document.createElement("p");
-    const sunsetData = await getSunsetForMountain(
-      mountain.coords.lat,
-      mountain.coords.lng
-    );
+    const sunsetData = await getSunsetForMountain(mountain.coords.lat, mountain.coords.lng);
     sunsetInfo.textContent = `Sunset: ${sunsetData.results.sunset} UTC`;
 
     content.appendChild(name);
@@ -160,6 +163,13 @@ async function displayResults(mountains) {
 
     resultsContainer.appendChild(card);
   }
+}
+
+function filterMountains(query) {
+  const filteredMountains = mountainsArray.filter((mountain) =>
+    mountain.name.toLowerCase().includes(query.toLowerCase())
+  );
+  displayResults(filteredMountains);
 }
 
 function setupBackgroundMusic() {

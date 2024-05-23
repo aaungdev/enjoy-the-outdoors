@@ -38,6 +38,13 @@ window.onload = function () {
     }
   };
 
+  searchInput.onkeypress = function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSearch(searchInput.value);
+    }
+  };
+
   document.onclick = function (event) {
     if (
       !searchIcon.contains(event.target) &&
@@ -61,7 +68,7 @@ window.onload = function () {
   }, observerOptions);
 
   popUpElements.forEach((element, index) => {
-    element.style.animationDelay = `${index * 0.3}s`;
+    element.style.animationDelay = `${index * 0.2}s`;
     observer.observe(element);
   });
 
