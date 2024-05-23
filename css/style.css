@@ -755,9 +755,10 @@ body {
 /* Parks Main Section */
 .heroSectionParks {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   background-color: #1a1a1a;
+  margin-bottom: -1em;
 }
 
 .videoContainerWrapperParks {
@@ -967,7 +968,7 @@ body {
 
 .resultsTitle {
   text-align: center;
-  margin: 1em 0;
+  margin: 0em 1em 1em 1em;
   font-size: 2em;
   color: #00ff00;
 }
