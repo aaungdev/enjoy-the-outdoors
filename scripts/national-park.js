@@ -162,7 +162,11 @@ window.onload = function () {
       card.appendChild(zip);
 
       const phone = document.createElement("div");
-      phone.textContent = park.Phone;
+      if (park.Phone === 0) {
+        phone.textContent = ' - ';
+      } else {
+        phone.textContent = park.Phone;
+      }
       card.appendChild(phone);
 
       const link = document.createElement("a");
