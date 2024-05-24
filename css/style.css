@@ -1153,7 +1153,7 @@ body {
   width: 80%;
   max-width: 700px;
   margin-bottom: 2em;
-  margin-left: 26em;
+  margin: auto;
 }
 
 .filterButtonMountain {
