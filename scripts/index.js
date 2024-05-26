@@ -73,21 +73,21 @@ window.onload = function () {
   });
 
   // Control audio playback based on visibility using Intersection Observer
-  const audioElement = document.querySelector("#backgroundMusic");
-  const main = document.querySelector("main");
+  // const audioElement = document.querySelector("#backgroundMusic");
+  // const main = document.querySelector("main");
 
-  const observerAudio = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          audioElement.play();
-        } else {
-          audioElement.pause();
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
+  // const observerAudio = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         audioElement.play();
+  //       } else {
+  //         audioElement.pause();
+  //       }
+  //     });
+  //   },
+  //   { threshold: 0.5 }
+  // );
 
-  observerAudio.observe(main);
+  // observerAudio.observe(main);
 };

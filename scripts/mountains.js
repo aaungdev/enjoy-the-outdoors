@@ -172,21 +172,21 @@ function filterMountains(query) {
   displayResults(filteredMountains);
 }
 
-function setupBackgroundMusic() {
-  const audioElement = document.querySelector("#backgroundMusic");
+// function setupBackgroundMusic() {
+//   const audioElement = document.querySelector("#backgroundMusic");
 
-  // Function to play audio
-  function playAudio() {
-    if (audioElement.paused) {
-      audioElement.play();
-    }
-  }
+//   // Function to play audio
+//   function playAudio() {
+//     if (audioElement.paused) {
+//       audioElement.play();
+//     }
+//   }
 
-  // Handle user interaction to play audio
-  document.onclick = function () {
-    playAudio();
-  };
-  document.onscroll = function () {
-    playAudio();
-  };
-}
+//   // Handle user interaction to play audio
+//   document.onclick = function () {
+//     playAudio();
+//   };
+//   document.onscroll = function () {
+//     playAudio();
+//   };
+// }
