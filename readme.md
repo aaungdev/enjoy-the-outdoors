@@ -4,7 +4,7 @@ This project is a web application designed to help users explore and learn about
 
 ## Demo
 
-Explore the functionality of this Enjoy The Outdoors platform by visiting: [Outdoorsfinder](https://outdoorsfinder.netlify.app/)
+Explore the functionality of this Enjoy The Outdoors platform by visiting: [Outdoorsfinder](https://outdoors-finder.netlify.app/)
 
 ![Outdoors Website Display](./readme-images/home-outdoors.png)
 ![Outdoors Website Display](./readme-images/parks-outdoors.png)
